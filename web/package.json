@@ -7,13 +7,14 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "start": "webpack-dev-server --devtool eval --progress --port 3001 --host 10.3.137.199 --colors --content-base ./"
+    "start": "webpack-dev-server --devtool eval --progress --port 3001 --host 10.3.137.196 --colors --content-base ./"
   },
   "dependencies": {
-    "vue": "^2.4.4",
     "events": "^1.1.1",
     "flux": "^3.1.2",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "react-addons-css-transition-group": "^15.6.2",
+    "vue": "^2.4.4"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",

@@ -65,7 +65,7 @@
           width: 100%; 
           overflow: hidden;
     }
-    .boxlist{width:100%;overflow-x: scroll;overflow-y: hidden; height: 106px;}
+    .boxlist{width:100%;overflow-x: scroll;overflow-y: hidden; height: 106px;-webkit-overflow-scrolling:touch;}
     .ranklist{ 
         padding:10px;box-sizing:border-box;height:100px;width:220%;
         img{

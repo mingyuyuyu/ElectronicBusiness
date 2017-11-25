@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import * as ResultAction from './ResultAction.js';
 import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
+import Loading from '../../components/spinner/spinner.js';
 import './result.scss'
 class ResultComponent extends React.Component{
     componentDidMount(){        
@@ -59,10 +60,11 @@ class ResultComponent extends React.Component{
                 
             })
         }else{
-            var lis =<h1>抱歉，没有找到你要的东西</h1>
+            var lis =<div className="ym_noresult"><h3>无相关信息</h3><p>没有搜索到相关信息</p></div>
         }        
         return (
-            <div>
+            <div className="ym-resultroot">
+                <Loading show={this.props.loading} load={true}></Loading>
                 <div className="result_top">
                     <i onClick={this.back.bind(this)}>＜</i>
                     <h3>搜索结果</h3>

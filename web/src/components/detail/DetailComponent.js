@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import * as DetailAction from './DetailAction.js';
 import  './detail.scss';
-
+import Loading from '../../components/spinner/spinner.js';
 class DetailComponent extends React.Component{
     componentDidMount(){
         this.props.Init(this.props.params);
@@ -21,6 +21,7 @@ class DetailComponent extends React.Component{
         return (
             <div className="fl_detail">
                 <main>
+                    <Loading show={this.props.loading} load={true}></Loading>
                     <header>
                         <div className="icon">
                             <Link onClick={this.back.bind(this)}><i className="glyphicon glyphicon-menu-left"></i></Link>
@@ -50,6 +51,7 @@ class DetailComponent extends React.Component{
                         </div>
                     </header>
                     <div className="fl_details">
+
                         <div className="link" onClick={this.props.aChange.bind(this)}>
                             <a href="#detail">商品亮点</a>
                             <a href="#pramas">商品参数</a>
@@ -186,7 +188,8 @@ class DetailComponent extends React.Component{
 
 var mapStateToProps = function(state){
     return {
-        dataset:state.detail.dataset || []
+        dataset:state.detail.dataset || [],
+        loading: state.detail.loading || false
     }
 }
 

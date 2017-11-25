@@ -25,8 +25,11 @@ import SetComponent from '../components/set/setComponent';
 import MoComponent from '../components/moren/morenComponent';
 import List1Component from '../components/list1/list1Component';
 import BrowseComponent from '../components/browse/browseComponent';
+import AppComponent from '../components/app/AppComponent'
 export default(
     <Router>
+        <Route path="/" component={AppComponent}>
+        <IndexRoute component={AppComponent}/>
         <Route path="/home" component={HomeComponent}></Route>
         <Route path="/search" component={SearchComponent}></Route>
         <Route path="/result" component={ResultComponent}></Route>
@@ -55,6 +58,7 @@ export default(
             <Route path="/evaluate" component={EvaluateComponent}/>
             <Route path="/receiving" component={ReceivingComponent}/>
             <Route path="/shipments" component={ShipmentsComponent}/>
+        </Route>
         </Route>
     </Router>
 )

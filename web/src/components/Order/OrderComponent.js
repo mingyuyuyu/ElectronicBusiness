@@ -4,12 +4,40 @@ import {Link} from 'react-router';
 import AllComponent from '../all/allComponent';
 import OrderAction from './OrderAction';
 import './order.scss';
+import $ from 'jquery';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
+function Active(self){
+    switch(self.props.children.props.route.path){
+        case '/all':
+           $('.Oul-1').children('li').eq(0).addClass('order_active').siblings().removeClass('order_active'); 
+           break;
+        case '/shipments' :
+            $('.Oul-1').children('li').eq(1).addClass('order_active').siblings().removeClass('order_active');
+            break;
+        case '/await' :
+            $('.Oul-1').children('li').eq(2).addClass('order_active').siblings().removeClass('order_active');
+            break;
+        case '/receiving' :
+            $('.Oul-1').children('li').eq(3).addClass('order_active').siblings().removeClass('order_active');
+            break;
+        case '/evaluate' :
+            $('.Oul-1').children('li').eq(4).addClass('order_active').siblings().removeClass('order_active');
+            break;
+
+    }
+}
 
 class OrderComponent extends React.Component{
     componentDidMount(){
+        Active(this);
     }
     back(){
         this.props.router.goBack();
+
+    }
+    componentDidUpdate(props,nextState){
+        Active(this);
     }
     render(){
         return (
