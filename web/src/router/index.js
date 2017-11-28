@@ -26,6 +26,7 @@ import MoComponent from '../components/moren/morenComponent';
 import List1Component from '../components/list1/list1Component';
 import BrowseComponent from '../components/browse/browseComponent';
 import MoneyComponent from '../components/money/moneyComponent';
+import AppComponent from '../components/app/AppComponent'
 export default(
     <Router>
         <Route path="/home" component={HomeComponent}></Route>

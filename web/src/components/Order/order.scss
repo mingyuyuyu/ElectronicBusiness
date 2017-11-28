@@ -4,9 +4,18 @@
 .xc_container .Odiv-1{line-height:50px;}
 .xc_container p{text-align:center;}
 .xc_container .Oul-1{display:flex;flex-direction:row;line-height:60px;background-color:#fff;}
+
 .xc_container .Oul-1 li{width:20%;text-align:center;}
 .xc_container .Oul-1 li a{text-decoration:none;height:100%;}
 .xc_container .ediv-1 .ship-ul1 .eu3{padding:3px 0px;}
+
+// .xc_container .Oul-1 li{width:20%;text-align:center;
+//     a{
+//         display:block;width:100%;
+//     }
+// }
+// .xc_container .Oul-1 li:hover{border-bottom:4px solid #000;}
+
 .xc_container .i12{float:left;line-height:50px;}
 .xc_container .false{display:none;}
 .xc_container .true{display:block;}
@@ -73,6 +82,7 @@
     }
 }
 
+
 .ccallcolor{color:red;border:1px solid red;}
 .xc_container .moneyp{text-align:left;background-color:#eee;padding-left:10px;}
 .xc_container .moneyul {padding:10px 12px 0px 12px;}
@@ -85,10 +95,13 @@
 .xc_container .Oul-1 li{position:relative;}
 .xc_container .Oul-1 li span{display:block;position:absolute;top:8px;left:50px;line-height:10px;background-color:red;color:#fff;width:20px;border-radius:7px;padding:2px 0px;}
 
+
 .xc_container .order_active{
     border-bottom:2px solid #222;
     a{
         color:red;text-decoration:none;
     }
 }
+
+
 

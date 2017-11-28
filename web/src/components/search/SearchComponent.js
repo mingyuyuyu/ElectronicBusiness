@@ -4,7 +4,7 @@ import * as SearchAction from './SearchAction.js';
 import Loading from '../../components/spinner/spinner.js';
 import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import './search.scss';
-
+import PopWindowComponent from '../../components/popwindow/PopWindowPomponent.js';
 
 var username;
 var cookies = document.cookie;
@@ -24,16 +24,28 @@ class SearchComponent extends React.Component{
             idx: 0,
             show:false,
             key:{},
-            showhis:true
+            showhis:true,
+            showPop:false
         };
             
     }
     back(){
         this.props.router.goBack();
     }
-    clear(){
-        this.setState({showhis:false})
+    closePop(){
+        this.setState({
+            showPop:false
+        }) 
+    }
+    confirm(){
+        this.setState({showhis:false,showPop:false})
         this.props.clear({clear:'clear',username:this.props.username})
+    }
+    clear(){
+        this.setState({
+            showPop:true
+        })
+        
     }
     result(){
         var value = document.getElementById('word').value;
@@ -97,6 +109,7 @@ class SearchComponent extends React.Component{
                     <div className="ht">
                         <span className="hs">历史搜索</span>
                         <i onClick ={this.clear.bind(this)}><span className="glyphicon glyphicon-trash"></span></i>
+
                     </div>
                     <ul className="hl">
                         {   
@@ -109,6 +122,7 @@ class SearchComponent extends React.Component{
 
         return(
             <div className="mainsearch">
+                <PopWindowComponent show={this.state.showPop} closePop={this.closePop.bind(this)} confirm={this.confirm.bind(this)}/>
                 <div className="search_top">
                     <Link onClick={this.back.bind(this)} className="back">﹤</Link>
                     <div className="search">

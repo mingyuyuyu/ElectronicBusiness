@@ -6,6 +6,7 @@ import * as OrderAction from './OrderAction';
 import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import './order.scss';
 import $ from 'jquery';
+
 function Active(self){
     switch(self.props.children.props.route.path){
         case '/all':
@@ -26,9 +27,6 @@ function Active(self){
 
     }
 }
-
-
-
 
 class OrderComponent extends React.Component{
     // componentWillReceiveProps(newProps){
@@ -56,12 +54,15 @@ class OrderComponent extends React.Component{
         // this.props.hid();
     }
 
-    componentDidUpdate(props,nextState){
-        Active(this);
-    }
 
     back(){
-        
+
+        this.props.router.goBack();
+
+    }
+    componentDidUpdate(props,nextState){
+        Active(this);
+
     }
     render(){
          var dia1=0;

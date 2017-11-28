@@ -8,10 +8,10 @@ import './chose.scss';
 class ChoseComponent extends React.Component{
     componentDidUpdate(){
         if(this.props.morestatus){   
-            $('.chose').animate({height:'260px'},200);
+            $('.chose').animate({height:$('.chose li').outerHeight(true)*4},200);
             $('.chose').children('li').eq(4).html(`<img src="./src/img/ccc5_1.jpg"/>`)
         }else{
-            $('.chose').animate({height:'59px'},200);
+            $('.chose').animate({height:$('.chose li').outerHeight(true)},200);
             $('.chose').children('li').eq(4).html(`<img src="./src/img/ccc5.png"/>`)
             
         }
