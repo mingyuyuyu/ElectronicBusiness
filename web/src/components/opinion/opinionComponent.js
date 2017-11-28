@@ -9,7 +9,7 @@ class OpinionComponent extends React.Component{
              <div className="xc_container">
                     <header className="Opheader">
                         <Link to="my">
-                        <i className="glyphicon glyphicon-menu-left">
+                        <i className="glyphicon glyphicon-menu-left Opi">
                         </i></Link>
                         <div className="Odiv-1"><p>向CEO提意见</p></div>
                         <p>提交</p>

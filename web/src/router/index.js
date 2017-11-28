@@ -25,12 +25,14 @@ import SetComponent from '../components/set/setComponent';
 import MoComponent from '../components/moren/morenComponent';
 import List1Component from '../components/list1/list1Component';
 import BrowseComponent from '../components/browse/browseComponent';
+import MoneyComponent from '../components/money/moneyComponent';
 export default(
     <Router>
         <Route path="/home" component={HomeComponent}></Route>
         <Route path="/search" component={SearchComponent}></Route>
         <Route path="/result" component={ResultComponent}></Route>
         <Route path="/browse" component={BrowseComponent}></Route>
+        <Route path="/money" component={MoneyComponent}></Route>
         <Route path="/shopping" component={ShoppingComponent}>
             <IndexRoute component={ListComponent}/>
             <Route path="/list" component={ListComponent}></Route>

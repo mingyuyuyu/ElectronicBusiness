@@ -209,7 +209,7 @@ export function liu(a){
         types:['Beforedetail', 'browse', 'detailError'],
         url:baseUrl+'browse.php',
         data:{
-            username:username,
+            nameinter:username,
             goodsid:goodsid
         }
     }

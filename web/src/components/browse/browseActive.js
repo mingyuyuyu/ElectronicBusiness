@@ -19,12 +19,14 @@ export function browse(){
         }
     }
 }
-export function browse3(){
+export function browse4(item){
+ var goodsid = item.id;
     return{
         types:['Beforedetail', 'browse3', 'detailError'],
-        url:baseUrl+'delete1.php',
+        url:baseUrl+'browse.php',
         data:{
-            username:username,
+            goodsidx:goodsid,
+            delename:username,
         }
     }
 }

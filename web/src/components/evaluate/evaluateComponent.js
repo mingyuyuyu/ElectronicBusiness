@@ -11,6 +11,7 @@ class EvaluateComponent extends React.Component{
     render(){
         return (
             <div className="ediv-1">
+            <p>待评价</p>
             <ul className="eu3">
                  {
                    (this.props.dataset ? this.props.dataset : []).map(function(item,index){

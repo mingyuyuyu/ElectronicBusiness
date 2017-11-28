@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import * as DetailAction from './DetailAction.js';
 import  './detail.scss';
-
 class DetailComponent extends React.Component{
     componentDidMount(){
         this.props.Init(this.props.params);

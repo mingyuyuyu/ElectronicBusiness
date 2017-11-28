@@ -7,6 +7,9 @@ export default function cawaitReducer(state = {}, action){
         case 'Reqca':
             reState.dataset = action.dataset
             break;
+        case 'fahuo':
+            // reState.dataset = action.dataset
+            break;
         default:
             reState.loading = false;
     }

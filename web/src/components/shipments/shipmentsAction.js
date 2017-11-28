@@ -1,29 +1,23 @@
 import baseUrl from '../../utils/baseUrl.js';
-
-export function xc1(){
-    var cookies = document.cookie;
-    var username = cookies.slice(8,-1);
+export function ship(username){
+    // console.log(username);
     return {
-        types: ['BeforeRequest', 'Reqship1', 'RequestError'],
-        url: baseUrl+'fukuang.php',
-        data:{username:username}
+        types: ['BeforeRequestAll', 'shipments', 'RequestError'],
+        url:baseUrl+'orderlist.php',
+        data:{username:username,status:1}
     }
 }
-export function zhifu(shipments){
-    var goodsid=[];
-    var cookies = document.cookie;
-    var username = cookies.slice(8,-1);
-    for(var i=0;i<shipments.length;i++){
-        goodsid.push(shipments[i].id);
-    }
+export function order(item,event){
+    $(event.target).toggleClass("ccallcolor");
+  var username=item[0].username;
+  var ordernumber=item[0].ordernumber;
     return {
-        types: ['BeforeRequest', 'Reqship2', 'RequestError'],
-         url: baseUrl+'zhifu.php',
-         data:{
-            shipments:JSON.stringify({
-                username:username,
-                id:goodsid 
-            })
+        types: ['BeforeRequestAll', 'Recc1', 'RequestError'],
+        url:baseUrl+'orderlist.php',
+        data:{
+            username:username,
+            ordernumber:ordernumber
         }
     }
 }
+

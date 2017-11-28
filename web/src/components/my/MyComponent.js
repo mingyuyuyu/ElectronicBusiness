@@ -5,7 +5,6 @@ import * as MyAction from './MyAction';
 import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import './my.scss';
 import CheComponent from '../che/cheComponent';
-
 var username;
 var cookies = document.cookie;
 if(cookies.length>0){

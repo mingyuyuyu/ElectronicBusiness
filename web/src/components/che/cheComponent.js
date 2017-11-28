@@ -7,7 +7,6 @@ class CheComponent extends React.Component{
         this.props.carlist1();
     }
     render(){
-        console.log(this.props.che);
         return (
 
                 <div className="cdiv-5">
