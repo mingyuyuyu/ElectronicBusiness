@@ -52,7 +52,7 @@ const mapStateToProps = function(state){
             },
             {
                 imgurl:'./src/img/ccc2.png',
-                tourl:'/listType/2'
+                tourl:''
             },
             {
                 imgurl:'./src/img/ccc3.png',
@@ -92,7 +92,7 @@ const mapStateToProps = function(state){
             },
             {
                 imgurl:'./src/img/ccc13.jpg',
-                tourl:'/listType/:2'
+                tourl:'/listType/2'
             },
             {
                 imgurl:'./src/img/ccc14.jpg',
