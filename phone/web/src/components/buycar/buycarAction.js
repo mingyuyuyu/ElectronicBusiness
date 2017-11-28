@@ -12,7 +12,7 @@ if(cookies.length>0){
     })
 }
 
-export function Init4(){    
+export function Init4(){
     return {
         types: ['BeforeRequest', 'Reqbuy1', 'RequestError'],
         url:baseUrl+'carlist1.php',
@@ -45,6 +45,8 @@ export function red(e){
         type:'red'
     }
 }
+
+
 export function bianji(e){
     if($(e.target).text()=='完成'){
         $('.shan').removeClass('block');
@@ -82,7 +84,7 @@ export function allshan(){
         types: ['BeforeRequest', 'Reqbuy6', 'RequestError'],
         url: baseUrl+'delete.php',
         data:{
-            username:username
+             username:username
         }
     }
 }

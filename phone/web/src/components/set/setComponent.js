@@ -56,7 +56,7 @@ class SetComponent extends React.Component{
                         </i>
                     </li>
                     </ul>
-                    <p onClick={this.out}>退出登录</p>                   
+                    <p onClick={this.out}>退出登录</p>
                 </div>
             </div>
         )

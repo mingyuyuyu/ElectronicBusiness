@@ -1,23 +1,22 @@
 <?php
- $servername = 'localhost';
-    $username = 'root';
-    $password = '';
-    $database = 'react';
-    // 1）连接数据库
-    $conn = new mysqli($servername,$username,$password,$database);
-    // 检测连接
-    if($conn->connect_errno){
-        die('连接失败：'.$conn->connect_error);
-    }
+  include 'connect.php';
+    
     $conn->set_charset('utf8');
-    header("Access-Control-Allow-Origin: *");
-    $list = isset($_REQUEST['list']) ? $_REQUEST['list'] : 1;
-    $list = json_decode($list);
-    $username = $list->username;
-    $id = $list->id;
-    $id=implode(",",$id);
-    $sql="update list set status = 2 where goodsid in (".($id).") and username = '$username' ";
-    $result=$conn->query($sql);
-    $row='ok';
-    echo json_encode($row,JSON_UNESCAPED_UNICODE);
+    
+    $username = isset($_REQUEST['username']) ? $_REQUEST['username'] : '';
+    
+    $ordernumber=isset($_REQUEST['ordernumber']) ? $_REQUEST['ordernumber'] : '';
+    
+    $status=isset($_REQUEST['status']) ? $_REQUEST['status'] : '';
+    
+    if($status==1){
+        $sql="update list set status = 2 where ordernumber = $ordernumber and username = '$username' ";
+        $result=$conn->query($sql);
+        echo json_encode('ok',JSON_UNESCAPED_UNICODE);
+        break;
+    }else if($status==2){
+        $sql="update list set status = 3 where ordernumber = $ordernumber and username = '$username' ";
+        $result=$conn->query($sql);
+        echo json_encode('ok',JSON_UNESCAPED_UNICODE);
+    }
 ?>

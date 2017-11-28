@@ -4,6 +4,7 @@ import * as SearchAction from './SearchAction.js';
 import Loading from '../../components/spinner/spinner.js';
 import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import './search.scss';
+import PopWindowComponent from '../../components/popwindow/PopWindowPomponent.js';
 
 var username;
 var cookies = document.cookie;
@@ -24,15 +25,27 @@ class SearchComponent extends React.Component{
             idx: 0,
             show:false,
             key:{},
-            showhis:true
-        };            
+            showhis:true,
+            showPop:false
+        };
     }
     back(){
         this.props.router.goBack();
     }
-    clear(){
-        this.setState({showhis:false})
+    closePop(){
+        this.setState({
+            showPop:false
+        }) 
+    }
+    confirm(){
+        this.setState({showhis:false,showPop:false})
         this.props.clear({clear:'clear',username:this.props.username})
+    }
+    clear(){
+        this.setState({
+            showPop:true
+        })
+        
     }
     result(){
         var value = document.getElementById('word').value;
@@ -68,7 +81,7 @@ class SearchComponent extends React.Component{
     }
     render(){
         var lis = this.props.keylist.map((item,idx)=>{
-            return <li key={idx} onClick={this.getidx.bind(this,idx)}>{item}</li>
+                return <li key={idx} onClick={this.getidx.bind(this,idx)}>{item}</li>
         })
         if(this.state.showhis && this.props.itemset.length>0){
             var hist = this.props.itemset.map((item,idx)=>{
@@ -101,6 +114,7 @@ class SearchComponent extends React.Component{
 
         return(
             <div className="mainsearch">
+                <PopWindowComponent show={this.state.showPop} closePop={this.closePop.bind(this)} confirm={this.confirm.bind(this)}/>
                 <div className="search_top">
                     <Link onClick={this.back.bind(this)} className="back">﹤</Link>
                     <div className="search">
@@ -217,8 +231,7 @@ class SearchComponent extends React.Component{
     }
 }
 
-
-const mapStateToProps = function(state){    
+const mapStateToProps = function(state){
     return {
         keylist:['毒文','商品'],
         loading:state.search.loading,

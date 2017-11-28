@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import * as ListTypeAction from './ListTypeAction.js';
-import baseUrl from '../../utils/baseUrl.js';
 
 class ListTypeComponent extends React.Component{
     constructor(props){
@@ -29,7 +28,7 @@ class ListTypeComponent extends React.Component{
             lis[0].firstChild.style.color = '#ea4f25';
         }
     }
-    render(){           
+    render(){
         return (
             <div>
                 <img src="./src/img/banner.png" />            

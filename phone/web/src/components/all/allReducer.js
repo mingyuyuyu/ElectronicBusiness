@@ -8,6 +8,8 @@ export default function AllReducer(state = {}, action){
             reState.loading = false;
             reState.dataset = action.dataset;
             break;
+        case 'Recc':
+            reState.dataset = action.dataset;
         default:
             reState.loading = false;
     }

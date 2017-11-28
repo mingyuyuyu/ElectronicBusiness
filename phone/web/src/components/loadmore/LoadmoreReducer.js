@@ -18,7 +18,7 @@ export default function LoadmoreReducer(state = {}, action){
                  reState.pageNo=2
             }else{
                 reState.pageNo +=1;
-            }           
+            }
             break;
         default:
             reState.loading = false;

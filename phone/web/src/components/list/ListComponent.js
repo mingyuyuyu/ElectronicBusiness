@@ -24,7 +24,7 @@ class ListComponent extends React.Component{
                                 (this.props.dataset || []).map(function(obj,idx){
                                     return (
                                         <li key={'rec'+idx}>
-                                            <Link to={'listType/:'+obj.type}><img src={obj.img} /></Link>
+                                            <Link to={'listType/'+obj.type}><img src={obj.img} /></Link>
                                             <strong>{obj.price}元</strong>
                                             <p>{obj.name}</p>
                                         </li>                                        
@@ -47,7 +47,7 @@ class ListComponent extends React.Component{
                     <div>
                         <h2>毒友推荐</h2>
                         <p>大家都在买</p>
-                        <Link to="listType/:3">
+                        <Link to="listType/3">
                             <ul className="part1">
                                 <li><img src="./src/img/g1.png" /></li>
                                 <li><img src="./src/img/g2.png" /></li>
@@ -58,7 +58,7 @@ class ListComponent extends React.Component{
                     <div>
                         <h2>毒家</h2>
                         <p>只有这里</p>
-                        <Link to="listType/:5">
+                        <Link to="listType/5">
                             <ul>
                                 <li><img src="./src/img/y10.png" /></li>
                             </ul>

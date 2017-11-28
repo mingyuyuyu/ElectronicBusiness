@@ -14,7 +14,7 @@ if(cookies.length>0){
 
 export function browse1(){
     return{
-        types:['BeforeRequest', 'browse2', 'detailError'],
+        types:['Beforedetail', 'browse2', 'detailError'],
         url:baseUrl+'browse.php',
         data:{
             username:username,

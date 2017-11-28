@@ -42,7 +42,7 @@ class BuycarComponent extends React.Component{
         super(props);
         this.state = {
             totalPrice:[]
-        };            
+        };
     }
     componentDidMount(){
         this.props.Init4();
@@ -152,7 +152,7 @@ class BuycarComponent extends React.Component{
             },2000)
             return;
         }
-          hashHistory.push({
+        hashHistory.push({
             pathname:'/listOrder',
             state: gather,
             query:{totalprice:tprice}
@@ -172,35 +172,38 @@ class BuycarComponent extends React.Component{
         }else{
             var carList = <div className="body">
                 <div className="bdiv-1">
-                     <div className="bdiv-2">
-                            <div className="bdiv-shan">
-                                <input type="checkbox" className="input-buy" onClick={this.Buy.bind(this)}/>
-                                <i className="glyphicon glyphicon-trash shan" onClick={this.props.allshan}></i>
-                                <p>毒物宠店<a className="buya">[满399.0顺风包邮]</a></p>
-                            </div>
-                            <Link to="shopping"><i className="glyphicon glyphicon-menu-right"></i></Link>
-                       </div>
-                            <ul className="bul">
-                             {
-                               (this.props.carlist ? this.props.carlist : []).map((item,index)=>{
-                                    return (
+                    <div className="bdiv-2">
+                        <div className="bdiv-shan">
+                            <input type="checkbox" className="input-buy" onClick={this.Buy.bind(this)}/>
+                            <i className="glyphicon glyphicon-trash shan" onClick={this.props.allshan}></i>
+                            <p>毒物宠店<a className="buya">[满399.0顺风包邮]</a></p>
+                        </div>
+                        <Link to="shopping"><i className="glyphicon glyphicon-menu-right"></i></Link>
+                    </div>
+                    <ul className="bul">
+                        {
+                            (this.props.carlist ? this.props.carlist : []).map((item,index)=>{
+                                return (
                                     <li key={'li'+index} className="bli">
                                         <input type="checkbox" className="buyinput" onClick={this.changeInds.bind(this)}/>
                                         <i className="glyphicon glyphicon-trash shan" onClick={this.props.shan.bind(this,this.props.carlist,index)}></i>
                                         <Link to={{
-                                            pathname:`detail/:${item.id}`, 
-                                        }}><img src={item.img} className="imgsrc"/></Link>
-                                        <div className="buydiv-1">
-                                             <Link to={{
-                                            pathname:`detail/:${item.id}`,
-                                        }}>
-                                            <span data-id={item.id} className="goodsname">{item.name}</span>
+                                                pathname:`detail/:${item.id}`, 
+                                            }}><img src={item.img} className="imgsrc"/>
                                         </Link>
-                                        <div className="goodstype">颜色:<span className="color">{item.color}</span>  &nbsp;&nbsp;尺寸:<span className="size">{item.size}</span></div>
+                                        <div className="buydiv-1">
+                                            <Link to={{
+                                                pathname:`detail/:${item.id}`,
+                                            }}>
+                                                <span data-id={item.id} className="goodsname">{item.name}</span>
+                                            </Link>
+                                            <div className="goodstype">颜色:<span className="color">{item.color}</span>  &nbsp;&nbsp;尺寸:<span className="size">{item.size}</span>
+                                            </div>
                                             <div className="buyspan2">
-                                            <p>
-                                                <span className="buyspan5">{item.price}</span><span>元</span>
-                                            </p>
+                                                <p>
+                                                    <span className="buyspan5">{item.price}</span>
+                                                    <span>元</span>
+                                                </p>
                                                 <div className="buyspan3">
                                                     <span onClick={this.jian.bind(this,index,item.id,item.color,item.size,this.props.username)} className={item.price}>-</span>
                                                     <span className="number">{item.number}</span>
@@ -210,10 +213,10 @@ class BuycarComponent extends React.Component{
                                             </div>
                                         </div>
                                     </li>
-                                    )
-                                })
-                            }
-                            </ul>
+                                )
+                            })
+                        }
+                    </ul>
                 </div>
             </div>
         }

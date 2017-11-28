@@ -15,7 +15,7 @@ export default class SpinnerComponent extends React.Component{
         } 
         else if(this.props.show && this.props.load){
             return (
-                <div>s
+                <div>
                     <div className="ym-spinner">
                     <div className="ym-loading"><div><i className="iconfont icon-sanjiaoxing"></i></div></div>
                         <p>努力加载中</p>

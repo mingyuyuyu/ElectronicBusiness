@@ -25,6 +25,7 @@ import SetComponent from '../components/set/setComponent';
 import MoComponent from '../components/moren/morenComponent';
 import ListOrderComponent from '../components/listOrder/listOrderComponent';
 import BrowseComponent from '../components/browse/browseComponent';
+import MoneyComponent from '../components/money/moneyComponent';
 
 export default(
     <Router>
@@ -33,6 +34,7 @@ export default(
         <Route path="/search" component={SearchComponent}></Route>
         <Route path="/result" component={ResultComponent}></Route>
         <Route path="/browse" component={BrowseComponent}></Route>
+        <Route path="/money" component={MoneyComponent}></Route>
         <Route path="/shopping" component={ShoppingComponent}>
             <IndexRoute component={ListComponent}/>
             <Route path="/list" component={ListComponent}></Route>

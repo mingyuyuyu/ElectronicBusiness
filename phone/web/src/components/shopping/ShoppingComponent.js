@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import * as ShoppingAction from './ShoppingAction.js';
 import SpinnerComponent from '../spinner/spinner';
 import './shopping.scss';
-import baseUrl from '../../utils/baseUrl.js';
 
 class ShoppingComponent extends React.Component{
     render(){

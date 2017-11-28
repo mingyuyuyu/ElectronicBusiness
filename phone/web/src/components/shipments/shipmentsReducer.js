@@ -4,10 +4,10 @@ export default function shipmentsReducer(state = {}, action){
         case 'BeforeRequest':
             reState.loading = true;
             break;
-        case 'Reqship1':
+        case 'shipments':
             reState.dataset =action.dataset;
             break;
-        case 'Reqship2':
+        case 'Recc1':
             // reState.dataset =action.dataset;
             break;
         default:

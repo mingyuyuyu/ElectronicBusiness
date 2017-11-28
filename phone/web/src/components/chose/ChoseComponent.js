@@ -12,7 +12,7 @@ class ChoseComponent extends React.Component{
             $('.chose').children('li').eq(4).html(`<img src="./src/img/ccc5_1.jpg"/>`)
         }else{
             $('.chose').animate({height:$('.chose li').outerHeight(true)},200);
-            $('.chose').children('li').eq(4).html(`<img src="./src/img/ccc5.png"/>`)           
+            $('.chose').children('li').eq(4).html(`<img src="./src/img/ccc5.png"/>`)
         }
     }
     aa(idx){
@@ -52,15 +52,15 @@ const mapStateToProps = function(state){
             },
             {
                 imgurl:'./src/img/ccc2.png',
-                tourl:'/listType/:2'
+                tourl:'/listType/2'
             },
             {
                 imgurl:'./src/img/ccc3.png',
-                tourl:'/listType/:4'
+                tourl:'/listType/4'
             },
             {
                 imgurl:'./src/img/ccc4.png',
-                tourl:'/listType/:5'
+                tourl:'/listType/5'
             },
             {
                 imgurl:'./src/img/ccc5.png',
@@ -72,23 +72,23 @@ const mapStateToProps = function(state){
             },
             {
                 imgurl:'./src/img/ccc7.jpg',
-                tourl:'/listType/:11'
+                tourl:'/listType/11'
             },
             {
                 imgurl:'./src/img/ccc9.jpg',
-                tourl:'/listType/:6'
+                tourl:'/listType/6'
             },
             {
                 imgurl:'./src/img/ccc10.jpg',
-                tourl:'/listType/:9'
+                tourl:'/listType/9'
             },
             {
                 imgurl:'./src/img/ccc11.jpg',
-                tourl:'/listType/:7'
+                tourl:'/listType/7'
             },
             {
                 imgurl:'./src/img/ccc12.jpg',
-                tourl:'/listType/:1'
+                tourl:'/listType/1'
             },
             {
                 imgurl:'./src/img/ccc13.jpg',
@@ -96,11 +96,11 @@ const mapStateToProps = function(state){
             },
             {
                 imgurl:'./src/img/ccc14.jpg',
-                tourl:'/listType/:8'
+                tourl:'/listType/8'
             },
             {
                 imgurl:'./src/img/ccc15.jpg',
-                tourl:'/listType/:10'
+                tourl:'/listType/10'
             },
             {
                 imgurl:'./src/img/ccc16.jpg',

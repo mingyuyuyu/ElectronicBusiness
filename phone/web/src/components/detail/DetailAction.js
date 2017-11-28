@@ -54,7 +54,7 @@ export function pop(e){
             pop.style.display = 'block';
             em.innerHTML = '加入购物车';
             addType.appendChild(em);
-        }        
+        }
     }
     if(e.target.className.toLowerCase() == 'fl_buy'){
         if(username==undefined){
@@ -197,7 +197,7 @@ export function liu(a){
         types:['Beforedetail', 'browse', 'detailError'],
         url:baseUrl+'browse.php',
         data:{
-            username:username,
+            nameinter:username,
             goodsid:goodsid
         }
     }

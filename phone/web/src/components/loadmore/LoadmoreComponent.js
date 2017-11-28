@@ -7,13 +7,13 @@ import './loadmore.scss';
 var lastpage = 2;
 
 class LoadmoreComponent extends React.Component{
-    componentDidMount(){       
+    componentDidMount(){
         window.scrollTo(0,0);
         this.props.Init(this.props.pageNo,this.props.qty)
         window.onscroll = ()=>{
             var scrollTop = window.scrollY;
             this.props.change(scrollTop);
-            if(scrollTop>document.documentElement.scrollHeight - window.innerHeight-15 && this.props.pageNo == lastpage){
+            if(scrollTop>document.documentElement.scrollHeight - window.innerHeight-15 &&this.props.pageNo==lastpage){
                  this.props.Init(this.props.pageNo,this.props.qty)
                  lastpage++;
             }
@@ -22,7 +22,7 @@ class LoadmoreComponent extends React.Component{
     render(){
         return (
             <div>
-                <Loading show={this.props.loading}></Loading>
+                <Loading show={this.props.loading} loadmore={true}></Loading>
                 <ul className="maincontent">
                     {
                         this.props.dataset1.map((item,idx)=>{
@@ -32,24 +32,24 @@ class LoadmoreComponent extends React.Component{
                                         pathname:'article',
                                         query:{id:item.id}
                                     }}>
-                                        <p className="mainimage"><img src={item.imgurl}/></p>
-                                        <div className="mainbox">
-                                            <p className="maintitle">{item.title}</p>
-                                            <p className="maincon">{item.content}</p>
-                                            <div className="mainqty">
-                                                <div className="qty_l">
-                                                    <p className="mainread">
-                                                        <span className="glyphicon glyphicon-star-empty"></span>
-                                                        <span>{Math.ceil(item.readqty/10000)}万+</span>
-                                                    </p>
-                                                    <p className="mainzan">
-                                                        <span className="glyphicon glyphicon-thumbs-up"></span>
-                                                        <span>{item.zan}</span>
-                                                    </p>
-                                                </div>
-                                                <span className="mainto">详情</span>
+                                    <p className="mainimage"><img src={item.imgurl}/></p>
+                                    <div className="mainbox">
+                                        <p className="maintitle">{item.title}</p>
+                                        <p className="maincon">{item.content}</p>
+                                        <div className="mainqty">
+                                            <div className="qty_l">
+                                            <p className="mainread">
+                                                <span className="glyphicon glyphicon-star-empty"></span>
+                                                <span>{Math.ceil(item.readqty/10000)}万+</span>
+                                            </p>
+                                            <p className="mainzan">
+                                                <span className="glyphicon glyphicon-thumbs-up"></span>
+                                                <span>{item.zan}</span>
+                                            </p>
                                             </div>
+                                            <span className="mainto">详情</span>
                                         </div>
+                                    </div>
                                     </Link>
                                 </li>
                             )
@@ -57,7 +57,7 @@ class LoadmoreComponent extends React.Component{
                     }
                 </ul>
             </div>
-        )    
+        )
     }
 }
 
